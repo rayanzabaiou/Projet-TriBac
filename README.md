@@ -11,5 +11,3 @@ Mon travail était de m'occuper de ces balances, en partant de leur confection, 
 
 Vous retrouverez donc le code utilisé pour gérer l'écran OLED Pervasive Display.
 Toutefois, avant de décider d'utiliser l'écran Pervasive Display, nous avions essayé de paramétrer l'affichage sur deux petits écrans à bus I2C, vous trouverez également ce code dans le repo.
-
-Merci d'avoir lu !
