@@ -18,12 +18,12 @@ TriBac est une solution d'automatisation domestique conçue pour simplifier la c
 ## 🛠️ Ma Contribution : Pesée & Interface Utilisateur
 Sur ce projet, j'étais responsable de la conception et du développement de la **station de pesage et d'affichage**.
 
-### 🔹 Système de pesée (Hardware)
+### 🔹 Système de pesée 
 * Fabrication de deux balances sur-mesure pour les bacs de réception.
 * Utilisation de **capteurs de force** (Jauges de contrainte) couplés à des modules **HX711** pour la conversion analogique-numérique.
 * Étalonnage manuel des capteurs pour garantir une précision au gramme près.
 
-### 🔹 Interface & Affichage (Software)
+### 🔹 Interface & Affichage 
 * Développement sous **Arduino IDE (C++)** pour l'intégration de l'écran.
 * Gestion d'un écran **E-Paper / OLED Pervasive Display** (plus lisible et économe en énergie).
 * Logique d'alerte : Le système détecte et affiche en temps réel le poids de chaque bac et prévient l'utilisateur via l'écran dès qu'un seuil de remplissage est atteint.
