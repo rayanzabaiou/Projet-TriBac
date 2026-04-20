@@ -1,13 +1,45 @@
-# Projet-TriBac
-Projet de création d'un bac à linge intelligent
+# TriBac - Le Bac à Linge Intelligent
 
-En 2025, 5 étudiants de l'ESIEE Paris se sont lancé un défi : créer de A à Z un bac de tri de vêtements intelligent nommé TriBac. Le but du projet est de trier des vêtements en les mettant dans des bacs selont les différentes caractéristiques du vêtement, que ce soit selon sa couleur ou sa mtière par exemple. Bien entendu, comme pour tout projet universitaire, il y avait quelques contraintes, à savoir : 
-- Des achats limités à quelques sites choisis par l'école et un budget de 150€,
-- 2 mois pour tout faire : trouver l'idée du projet, passer les commandes, fabriquer la machine et la tester.
+> **Projet de 3ème année à l'ESIEE Paris.**
+> Conception et fabrication d'un système automatisé de tri de vêtements par RFID et pesée intelligente.
 
-Chaque vêtement possède un tag RFID qui permet d'identifier sa couleur ou sa matière. On place ensuite plusieurs vêtements sur un tapis roulant (de 3 niveaux) qui va les espacer. Un lecteur RFID est présent au niveau du 2e étage du tapis roulant et va scanner chaque vêtement un par un. Selon l'information à laquelle correspond le tag scanné, le dernier étage du tapis roulant changera ou non de sens. Par exemple, si le vêtement est bleu, le dernier tapis tournera dans le sens horaire pour que le vêtement tombe dans le bac "couleur", et si le vêtement est blanc, il tournera dans le sens anti-horaire pour que le vêtement tombe dans le bac "blanc". Chaque bac est placé sur une balance que l'on a fabriquée avec des capteurs de force SEN-HX71105. Enfin, les deux balances sont liées à un écran d'affichage OLED Pervasive Display qui nous permet d'afficher à l'utilisateur des informations sur les différents bacs de tri.
+---
 
-Mon travail était de m'occuper de ces balances, en partant de leur confection, puis de leur calibration et enfin en codant sur l'IDE Arduino le code pour gérer l'affichage sur l'écran OLED.
+## 💡 Le Concept
+TriBac est une solution d'automatisation domestique conçue pour simplifier la corvée de tri du linge. Le système identifie chaque vêtement via une puce **RFID**, l'achemine via un système de **tapis roulants à trois niveaux**, et l'oriente vers le bac approprié (Blanc ou Couleur) grâce à une inversion du sens de rotation du tapis final.
 
-Vous retrouverez donc le code utilisé pour gérer l'écran OLED Pervasive Display.
-Toutefois, avant de décider d'utiliser l'écran Pervasive Display, nous avions essayé de paramétrer l'affichage sur deux petits écrans à bus I2C, vous trouverez également ce code dans le repo.
+### 🎯 Contraintes du projet :
+* **Budget :** 150€ maximum.
+* **Délai :** 2 mois (conception, commande, fabrication, tests).
+* **Équipe :** 5 étudiants.
+
+---
+
+## 🛠️ Ma Contribution : Pesée & Interface Utilisateur
+Sur ce projet, j'étais responsable de la conception et du développement de la **station de pesage et d'affichage**.
+
+### 🔹 Système de pesée (Hardware)
+* Fabrication de deux balances sur-mesure pour les bacs de réception.
+* Utilisation de **capteurs de force** (Jauges de contrainte) couplés à des modules **HX711** pour la conversion analogique-numérique.
+* Étalonnage manuel des capteurs pour garantir une précision au gramme près.
+
+### 🔹 Interface & Affichage (Software)
+* Développement sous **Arduino IDE (C++)** pour l'intégration de l'écran.
+* Gestion d'un écran **E-Paper / OLED Pervasive Display** (plus lisible et économe en énergie).
+* Logique d'alerte : Le système détecte et affiche en temps réel le poids de chaque bac et prévient l'utilisateur via l'écran dès qu'un seuil de remplissage est atteint.
+
+---
+
+## 📂 Contenu du Repo
+Ce dépôt contient les deux itérations du code de gestion d'affichage :
+* `code_final_Pervasive_Display.ino` : La version finale optimisée pour l'écran Pervasive Display.
+* `code_avec_deux_ecrans.ino` : Prototype initial utilisant deux écrans OLED via bus I2C.
+
+---
+
+## 🔧 Stack Technique
+* **Microcontrôleur :** ESP32 / Arduino.
+* **Capteurs :** Lecteur RFID, Capteurs de poids SEN-HX711.
+* **Actuateurs :** Moteurs pour tapis roulants (pilotés par pont en H).
+* **Affichage :** Pervasive Displays (E-Paper) / SSD1306 (OLED).
+* **Langage :** C++ (Arduino).
